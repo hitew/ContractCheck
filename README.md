@@ -18,10 +18,10 @@ pip install -r requirements.txt
 ## Running Project
 This folder contains the code for the ContrackCheck method. There are a few important subfolders and files as follows.
 
--AST_Parsed - Uses ANTLR to parse abstract syntax trees.
--AFU_Extracted - Extracts AFU code slices.
--Embedded - Embeds code slices.
--Method - Performs vulnerability detection using different methods.
+- AST_Parsed - Uses ANTLR to parse abstract syntax trees.
+- AFU_Extracted - Extracts AFU code slices.
+- Embedded - Embeds code slices.
+- Method - Performs vulnerability detection using different methods.
 
 ## References
 Checking Smart Contracts With Structural Code Embedding
