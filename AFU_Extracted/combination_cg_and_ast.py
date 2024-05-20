@@ -51,7 +51,7 @@ def process_and_match_ast(cg_dir, ast_dir, output_dir):
                 graph = nx.MultiDiGraph(cg_data)
 
           
-            ast_filename = filename.split('.')[0] + '_parse_result_normalized'
+            ast_filename = filename.split('.')[0] + '_parse_result'
             with open(os.path.join(ast_dir, ast_filename), 'r') as f:
                 ast_data = f.read()
 
