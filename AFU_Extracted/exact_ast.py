@@ -26,11 +26,6 @@ def extract_doc_tokens(doc_list):
 def extract_doc_tokens_type(doc_list):
     return [get_token_types(doc) for doc in doc_list]
 
-def store_normalized_docs(linespan_list, ancestor_list, doc_tokens_norm, output_path, filename):
-    sol = os.path.basename(filename).split('.')[0] + '_normalized.txt'
-    with open(os.path.join(output_path, sol), 'w') as file:
-        for e in zip(linespan_list, ancestor_list, doc_tokens_norm):
-            file.write('_'.join(e[0]) + '\t' + ' '.join(e[1]) + '\t' + ' '.join(e[2]) + '\n')
 
 def get_tokens_from_doc(statement_str):
     token_clean_exp = ' (@[0-9]+,[0-9]+:[0-9]+=) | (,<[0-9]+>,[0-9]+:[0-9]+) | (,<[0-9]+>,channel=[0-9],[0-9]+:[0-9]+) | (,<-1>,[0-9]+:[0-9]+)'
