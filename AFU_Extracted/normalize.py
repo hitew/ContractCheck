@@ -1,6 +1,7 @@
 import re
 import os
 from tqdm import tqdm
+from AFU_Extracted.exact_ast import load_document_tokens,extract_doc_tokens,extract_doc_tokens_type
 
 def normalize_doc_tokens(doc_tokens, doc_tokens_type):
     return [normalize_tokens(tokens, token_type) for tokens, token_type in zip(doc_tokens, doc_tokens_type)]
