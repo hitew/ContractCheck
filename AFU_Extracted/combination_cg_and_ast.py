@@ -45,18 +45,17 @@ def preorder_traversal(graph, source_node, ast_data, output_directory, file_pref
 def process_and_match_ast(cg_dir, ast_dir, output_dir):
     for filename in tqdm(os.listdir(cg_dir)):
         if filename.endswith(".pkl"):
-            # Load call graph
+      
             with open(os.path.join(cg_dir, filename), 'rb') as f:
                 cg_data = pickle.load(f)
                 graph = nx.MultiDiGraph(cg_data)
 
-            # Load AST file
+          
             ast_filename = filename.split('.')[0] + '_parse_result_normalized'
             with open(os.path.join(ast_dir, ast_filename), 'r') as f:
                 ast_data = f.read()
 
-            # Find a source node to start preorder traversal, assuming graph is a tree
-            # This could be the first node with no incoming edges, or root nodes based on domain knowledge
+         
             for node in graph.nodes:
                 if graph.in_degree(node) == 0:  # Found a root node
                     preorder_traversal(graph, node, ast_data, output_dir, filename.split('.')[0])
