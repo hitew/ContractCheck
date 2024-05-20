@@ -17,6 +17,12 @@ def normalize_tokens(token_list, token_type):
             token = "normalizedToken"
         token_list_normalized.append(token.lower() if not token.startswith('%%%%') else token)
     return token_list_normalized
+
+def store_normalized_docs(linespan_list, ancestor_list, doc_tokens_norm, output_path, filename):
+    sol = os.path.basename(filename).split('.')[0] + '_normalized.txt'
+    with open(os.path.join(output_path, sol), 'w') as file:
+        for e in zip(linespan_list, ancestor_list, doc_tokens_norm):
+            file.write('_'.join(e[0]) + '\t' + ' '.join(e[1]) + '\t' + ' '.join(e[2]) + '\n')
     
 def normalize_files(base_dir, output_dir):
     for addr in tqdm(os.listdir(base_dir)):
