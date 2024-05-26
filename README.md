@@ -17,14 +17,14 @@ To start, you will need to pull the latest version of the contractcheck image fr
 bash
 
 ```
-docker pull hitew/contractcheck:2.0
+docker pull hitew/contractcheck:3.0
 ```
 
 Step 2: Run the Docker Container
 After successfully pulling the image, you can run a Docker container using the following command:
 
 ```
-docker run -v /path/to/:/app/input.sol contractcheck:2.0
+docker run -v /path/to/:/app/input.sol contractcheck:3.0
 ```
 
 Replace /path/to/ with the path to the directory on your host system that contains the smart contract files (.sol) you wish to check.
